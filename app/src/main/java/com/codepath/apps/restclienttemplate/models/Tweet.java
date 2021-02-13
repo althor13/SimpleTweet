@@ -1,17 +1,28 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class Tweet {
     public String body;
     public String createdAt;
     public long id;
     public User user;
+
+    @ColumnInfo
+    @PrimaryKey(autoGenerate=true)
+    Long idp;
+
+    @ColumnInfo
+    String name;
 
     public Tweet() {}
 
@@ -22,6 +33,22 @@ public class Tweet {
         tweet.id = jsonObject.getLong("id");
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         return tweet;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public static List<Tweet> fromJsonArray(JSONArray jsonArray) throws JSONException {
