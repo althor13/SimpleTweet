@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
+import org.parceler.Parcels;
 import org.w3c.dom.Text;
 
 import java.util.List;
@@ -96,6 +97,8 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra("body", tweet.getBody());
+                    i.putExtra("tweet", Parcels.wrap(tweet));
                     context.startActivity(i);
                 }
             });

@@ -25,6 +25,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:textStyle="bold"
         tools:text="Al_Thor13" />
 
     <com.codepath.apps.restclienttemplate.LinkifiedTextView
