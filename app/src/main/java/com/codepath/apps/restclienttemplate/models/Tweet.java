@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.codepath.apps.restclienttemplate.TimeFormatter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +41,9 @@ public class Tweet {
         return body;
     }
 
+    public String getFormattedTimestamp() {
+        return TimeFormatter.getTimeDifference(createdAt);
+    }
     public String getCreatedAt() {
         return createdAt;
     }
