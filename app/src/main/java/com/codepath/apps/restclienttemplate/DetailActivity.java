@@ -33,7 +33,7 @@ public class DetailActivity extends AppCompatActivity {
         textView.setText(tweet.getBody());
         tvName.setText(tweet.user.name);
         tvHandle.setText("@"+tweet.user.screenName + " • "+ tweet.getFormattedTimestamp());
-        //Glide.with(context).load(tweet.user.profileImageUrl).into(imageView);
+        Glide.with(this).load(tweet.user.profileImageUrl).into(imageView);
 
     }
 }

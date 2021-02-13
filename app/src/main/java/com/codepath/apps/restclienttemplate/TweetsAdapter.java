@@ -97,7 +97,6 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(context, DetailActivity.class);
-                    i.putExtra("body", tweet.getBody());
                     i.putExtra("tweet", Parcels.wrap(tweet));
                     context.startActivity(i);
                 }
